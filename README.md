@@ -4,6 +4,13 @@ Este projeto foi desenvolvido como parte de um **Teste Prático para Estágio em
 
 ---
 
+## 🔗 Links
+
+* **Aplicação:** https://loose-virid.vercel.app/
+* **Repositório:** https://github.com/matheusslippert/Loose
+
+---
+
 ## 🛠️ Tecnologias Utilizadas
 
 Para garantir um código escalável, manutenível e performático, foram utilizadas as seguintes ferramentas:
@@ -20,31 +27,28 @@ Para garantir um código escalável, manutenível e performático, foram utiliza
 
 Para executar o projeto localmente em sua máquina, siga os passos abaixo:
 
-1. **Clone o repositório:**
-```bash
-git clone https://github.com/seu-usuario/loose-ecommerce.git
-cd loose-ecommerce
+### 1. Clone o repositório
 
+```bash
+git clone https://github.com/matheusslippert/Loose.git
+cd Loose
 ```
 
+### 2. Instale as dependências
 
-2. **Instale as dependências:**
 ```bash
 npm install
-npm install -D sass
-
 ```
 
+### 3. Inicie o servidor de desenvolvimento
 
-3. **Inicie o servidor de desenvolvimento:**
 ```bash
 npm run dev
-
 ```
 
+### 4. Acesse o projeto
 
-4. **Acesse o projeto:**
-O terminal fornecerá um link local (geralmente `http://localhost:5173`). Segure `Cmd` (ou `Ctrl`) e clique no link para abrir no seu navegador.
+O terminal fornecerá um link local (geralmente `http://localhost:5173`). Abra-o no navegador para visualizar a aplicação.
 
 ---
 
@@ -53,7 +57,9 @@ O terminal fornecerá um link local (geralmente `http://localhost:5173`). Segure
 Para o desenvolvimento deste projeto, foram aplicados os seguintes conceitos fundamentais de e-commerce:
 
 * **Árvore de Categorias:** É a estrutura usada para organizar os produtos de uma loja virtual. Ela funciona como uma hierarquia, separando os itens em categorias e subcategorias para facilitar a navegação e a busca dos clientes.
+
 * **Produto:** É o item que está sendo vendido na loja. Ele reúne informações gerais como nome, descrição, marca e categoria, servindo como base para suas variações.
+
 * **SKU (Stock Keeping Unit):** É uma variação específica de um produto. Cada tamanho, cor ou modelo diferente possui seu próprio SKU, permitindo controlar estoque, preço e identificação de cada versão do produto.
 
 ---
@@ -69,3 +75,6 @@ Para o desenvolvimento deste projeto, foram aplicados os seguintes conceitos fun
 ## 🤝 Autor
 
 Desenvolvido por **Matheus Lippert**.
+
+* GitHub: https://github.com/matheusslippert
+* LinkedIn: https://www.linkedin.com/in/matheus-slippert/
