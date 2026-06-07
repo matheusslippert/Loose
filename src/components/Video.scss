@@ -1,0 +1,69 @@
+@use '../styles/variables' as *;
+
+.video-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  background-image: url('/assets/institucional/fundo-skate.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 0rem;
+
+  .overlay-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    .img-alto {
+      width: 80vw;
+      max-width: 1000px;
+      opacity: 0.85; 
+    }
+
+    .icon-play {
+      position: absolute;
+      width: 90px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .text-corner {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    font-family: $font-primary;
+    color: #ffffff;
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+  }
+}
+
+@media (max-width: 768px) {
+  .video-section {
+    height: 60vh;
+    padding-top: 4rem;
+    
+    .text-corner { 
+      left: 1.5rem; 
+      bottom: 1.5rem; 
+      font-size: 1.5rem; 
+    }
+    
+    .overlay-content .icon-play { 
+      width: 60px; 
+    }
+  }
+}

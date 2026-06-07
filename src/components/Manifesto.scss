@@ -1,0 +1,127 @@
+@use '../styles/variables' as *;
+
+.manifesto {
+  background-color: $brand-yellow;
+  /* AJUSTE 1: Topo reduzido quase a zero para o título colar lá em cima */
+  padding: 1.5rem 2rem 0 2rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* AJUSTE 2: Garante que o bloco suba e não fique no meio da tela */
+  text-align: center;
+  color: $text-primary;
+
+  .decor, .mascot {
+    position: absolute;
+    z-index: 1;
+  }
+
+  .decor-left { top: -13px; left: 0px; width: 430px; }
+  .decor-right { top: -20px; right: 0px; width: 410px; }
+
+  .mascot-vinyl { bottom: -180px; left: 15%; width: 300px; } 
+  .mascot-skate { bottom: -160px; right: 2%; width: 240px; } 
+
+  .manifesto-content {
+    position: relative;
+    z-index: 2;
+    max-width: 530px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0; 
+  }
+
+  .title-wrapper { position: relative; display: inline-block; }
+  .decor-sun { position: absolute; z-index: -1; }
+  .sun-top { top: -10px; left: -40px; width: 45px; }
+  .sun-bottom { bottom: 0px; right: -50px; width: 60px; }
+
+  /* --- Linhas Divisórias --- */
+  .divider-line {
+    width: 140px; 
+    margin: 0.8rem 0; 
+    opacity: 0.9;
+  }
+
+  .title-serif {
+    font-family: $font-secondary;
+    font-style: italic;
+    font-size: 2.4rem;
+    font-weight: 400;
+    margin-bottom: 0;
+    letter-spacing: -0.02em;
+  }
+
+  /* AJUSTE 3: Fontes dos Parágrafos agora 100% corretas e menores */
+  .paragraph-small, .paragraph-medium {
+    font-family: $font-primary; /* Força a fonte primária do projeto */
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  .paragraph-small {
+    font-size: 1rem; /* Fonte reduzida */
+    line-height: 1.4;
+    color: $brand-purple;
+  }
+
+  .paragraph-medium {
+    font-size: 1rem; /* Fonte reduzida */
+    line-height: 1.6;
+    color: $text-primary;
+  }
+
+  .subtitle-serif {
+    font-family: $font-secondary;
+    font-style: italic;
+    /* AJUSTE 4: "a Loose veste quem chegou" num tamanho mais harmônico */
+    font-size: 1.8rem; 
+    font-weight: 400;
+    line-height: 1;
+    margin-top: 0.2rem;
+
+    &.highlight {
+      color: $brand-purple;
+      margin-top: 0;
+    }
+  }
+
+  /* AJUSTE 5: Botão reduzido pela metade */
+  .manifesto-btn {
+    background-color: $brand-coral;
+    color: $surface-bg;
+    border: none;
+    /* Prenchimento muito menor */
+    padding: 0.5rem 1.5rem; 
+    border-radius: 40px;
+    transition: filter 0.2s ease, transform 0.2s ease;
+
+    font-family: $font-secondary;
+    font-style: italic;
+    font-weight: 400;
+    /* Letra menor */
+    font-size: 1.1rem; 
+    letter-spacing: 0.02em;
+
+    /* A matemática refeita para o botão menor cortar a tela */
+    margin-top: 1.5rem; 
+    margin-bottom: -85px; 
+
+    &:hover {
+      filter: brightness(0.9);
+      transform: scale(1.02);
+    }
+  }
+}
+
+/* --- Responsividade --- */
+@media (max-width: 1024px) {
+  .manifesto {
+    padding: 2rem 1.5rem 0 1.5rem;
+    
+    .decor, .mascot { display: none; }
+    .manifesto-btn { margin-bottom: -40px; } 
+  }
+}

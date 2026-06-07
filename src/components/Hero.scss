@@ -1,0 +1,180 @@
+@use '../styles/variables' as *;
+
+.hero {
+  position: relative;
+  height: calc(100vh - 100px); 
+  min-height: 700px;
+background-color: rgba(255, 214, 10, 0.3);
+  background-image: url('/assets/institucional/image1.png');
+  background-size: cover; 
+  background-position: center; 
+  background-blend-mode: multiply;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 3rem 5rem;
+  color: $text-primary;
+
+  
+  /* Correção: Fonte primária (Space Grotesk), peso normal, sem itálico */
+  .floating-left {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 3rem;
+    font-family: $font-primary;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.5rem;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+  }
+
+  .floating-center {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 45%;
+    transform: translateX(-50%);
+    color: $brand-purple;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  /* Correção: Cor cinza (secondary), peso médio */
+  .floating-right {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 5rem; 
+    font-size: 0.85rem;
+    color: $text-secondary;
+    font-weight: 600;
+    font-family: $font-primary;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 1.2rem;
+
+    .tag {
+      background-color: $brand-yellow;
+      color: $text-primary;
+      padding: 0.35rem 1rem;
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: 20px; 
+    }
+
+    .title-wrapper {
+      position: relative;
+      display: inline-block; /* Ajuda a conter o elemento para centralizar o sol */
+      
+      /* Correção: Solzinho centralizado atrás do texto */
+      .starburst {
+        position: absolute;
+        top: -15px;
+        left: 50%; /* Joga para o meio */
+        transform: translateX(-50%); /* Centraliza perfeitamente */
+        width: 140px;
+        z-index: -1;
+      }
+
+      h1 {
+        font-size: 4.2rem;
+        line-height: 0.85;
+        letter-spacing: -0.04em;
+        color: $text-primary;
+
+        .highlight {
+          color: $brand-purple;
+          font-family: $font-primary;
+          font-style: normal;
+          font-weight: 700; 
+        }
+      }
+    }
+
+.subtitle-wrapper {
+      position: relative;
+      display: inline-block;
+
+      .subtitle {
+        font-family: $font-primary;
+        font-style: italic;
+        color: $text-primary;
+        font-size: 1.5rem;
+        font-weight: 400;
+        position: relative;
+        z-index: 2;
+        letter-spacing: -0.02em;
+      }
+
+      .yellow-line {
+        position: absolute;
+        bottom: -12px; /* AJUSTE 1: Mudamos de 0px para -12px para desgrudar a linha do texto */
+        left: 10px;
+        width: 40%; 
+        height: auto;
+        opacity: 0.65; 
+        z-index: 1; 
+      }
+    }
+
+    .description {
+      font-size: 1rem;
+      line-height: 1.3;
+      margin-top: 6.5rem; /* AJUSTE 2: Aumentamos a margem de 0.5rem para 2.5rem para dar o respiro correto */
+      font-weight: 400; 
+
+      .bold {
+        font-weight: 700; 
+        margin-bottom: 0.25rem;
+        font-size: 1.25rem;
+        letter-spacing: -0.02em;
+      }
+    }
+    /* Correção: Largura ajustada ao conteúdo (fit-content) */
+    .cta-button {
+      background-color: $brand-coral;
+      color: $surface-bg;
+      border: none;
+      padding: 0.65rem 1.8rem; /* Padding menor */
+      width: fit-content; /* O botão não estica mais! */
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: 40px;
+      margin-top: 0.2rem;
+      transition: filter 0.2s ease;
+      
+      &:hover { filter: brightness(0.9); }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    justify-content: center;
+    padding: 2rem;
+    height: 100vh;
+    
+    .floating-left, .floating-center, .floating-right { display: none; }
+
+    .hero-content {
+      align-items: center;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.85);
+      padding: 2rem;
+      border-radius: 12px;
+      
+      .title-wrapper h1 { font-size: 3.5rem; }
+      .cta-button { align-self: center; }
+    }
+  }
+}

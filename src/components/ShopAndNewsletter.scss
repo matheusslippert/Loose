@@ -1,0 +1,291 @@
+@use '../styles/variables' as *;
+
+.shop-newsletter-section {
+  /* Fundo clarinho com os rabiscos que pega a seção toda */
+  background-image: url('/assets/institucional/fundo-new.png');
+  background-size: cover;
+  background-position: center;
+  padding: 6rem 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .container {
+    width: 100%;
+    max-width: 1250px;
+    display: flex;
+    flex-direction: column;
+    gap: 6rem; /* Espaço entre a vitrine, o banner e a newsletter */
+  }
+
+  /* --- 1. VITRINE DE PRODUTOS --- */
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+
+    .product-card {
+      background-color: transparent;
+      display: flex;
+      flex-direction: column;
+
+      .image-wrapper {
+        background-color: #ffffff;
+        padding: 2rem;
+        margin-bottom: 1.5rem;
+        border-radius: 4px;
+        img {
+          width: 100%;
+          height: auto;
+          object-fit: contain;
+          transition: transform 0.3s ease;
+        }
+
+        &:hover img {
+          transform: scale(1.05); /* Efeito de vitrine */
+        }
+      }
+
+      .product-info {
+        display: flex;
+        flex-direction: column;
+
+        .badge {
+          color: $brand-coral;
+          font-family: $font-primary;
+          font-size: 0.8rem;
+          font-weight: 700;
+          margin-bottom: 0.2rem;
+        }
+
+        h3 {
+          font-family: $font-primary;
+          font-size: 1.2rem;
+          font-weight: 700;
+          color: $text-primary;
+          margin-bottom: 0.2rem;
+        }
+
+        .category, .colors {
+          font-family: $font-primary;
+          font-size: 0.9rem;
+          color: $text-secondary;
+          margin-bottom: 0.2rem;
+        }
+
+        .price-row {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: 1rem;
+
+          .price {
+            font-family: $font-primary;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: $text-primary;
+          }
+
+          .btn-comprar {
+            background-color: $brand-coral;
+            color: #ffffff;
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 40px;
+            font-family: $font-primary;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: filter 0.2s;
+
+            &:hover {
+              filter: brightness(0.9);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* --- 2. BANNER SOLTO --- */
+  .banner-solto {
+    position: relative;
+    width: 100%;
+    height: 600px; /* Altura fixa do banner */
+    border-radius: 4px;
+    overflow: hidden;
+
+    .bg-casal {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top; 
+      display: block;
+    }
+
+    .overlay-solto {
+      position: absolute;
+      top: 45%;
+      left: 2rem;
+      transform: translateY(-50%);
+      width: 530px;
+      z-index: 2;
+    }
+
+    .overlay-mascote {
+      position: absolute;
+      top: 16%;
+      left: 39%;
+      width: 180px;
+      z-index: 3;
+    }
+
+    .overlay-smiley {
+      position: absolute;
+      top: 0rem;
+      right: 0rem;
+      width: 100px;
+      z-index: 4;
+    }
+  }
+
+ /* --- 3. NEWSLETTER --- */
+  .newsletter-banner {
+    background-image: url('/assets/institucional/bg-new.png');
+    /* Mantive o tamanho e a posição que você já tinha deixado perfeito: */
+    background-size: 100%; 
+    background-position: center 10%;
+    padding: 4rem 3rem;
+    border-radius: 4px;
+
+    .newsletter-content {
+      display: flex;
+      justify-content: flex-end; /* Mantém o texto e o form colados na direita */
+      align-items: center;
+      gap: 3rem; /* Espaço exato entre o texto e o formulário */
+      background-color: transparent;
+
+      h2 {
+        font-family: $font-primary;
+        font-size: 2.2rem;
+        font-weight: 400;
+        color: #ffffff;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        margin: 0; 
+      }
+
+      .form-wrapper {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        max-width: 500px;
+
+        form {
+          display: flex;
+          background-color: #ffffff;
+          padding: 0.5rem;
+          border-radius: 4px;
+          width: 100%;
+
+          input {
+            flex: 1;
+            border: none;
+            padding: 1rem 1rem 1rem 5rem; 
+            font-family: $font-primary;
+            font-size: 1rem;
+            color: $text-primary;
+            outline: none;
+
+            &::placeholder {
+              color: $text-secondary;
+              letter-spacing: 0.05em;
+            }
+          }
+
+          .btn-enviar {
+            background-color: #FF6B6B;
+            color: #ffffff;
+            border: none;
+            padding: 0.2rem 1.8rem; 
+            border-radius: 20px;
+            font-size: 1.4rem; 
+            font-weight: 700; /* O SEGREDO DO NEGRITO AQUI! */
+            cursor: pointer;
+            transition: filter 0.2s;
+
+            &:hover {
+              filter: brightness(0.9);
+            }
+          }
+        }
+      }
+    }
+  }
+  /* --- ESTILO DA NOTIFICAÇÃO (TOAST) --- */
+  .notification-toast {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: #ffffff;
+    border-left: 5px solid $brand-purple; /* Barrinha roxa para dar charme */
+    padding: 1.5rem;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 9999; /* Fica acima de TUDO no site */
+    max-width: 350px;
+    animation: slideIn 0.3s ease-out forwards;
+
+    p {
+      font-family: $font-primary;
+      color: $text-primary;
+      font-weight: 700;
+      font-size: 1rem;
+      margin: 0;
+      line-height: 1.4;
+    }
+  }
+
+  /* Animação suave para a notificação entrar na tela */
+  @keyframes slideIn {
+    from {
+      transform: translateX(120%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 1024px) {
+  .shop-newsletter-section {
+    .products-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .newsletter-banner .newsletter-content {
+      flex-direction: column;
+      text-align: center;
+      
+      .form-wrapper {
+        justify-content: center;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .shop-newsletter-section {
+    .products-grid {
+      grid-template-columns: 1fr;
+    }
+    .banner-solto {
+      height: 400px;
+      .overlay-solto { width: 250px; }
+      .overlay-mascote { width: 100px; left: 50%; }
+    }
+  }
+}

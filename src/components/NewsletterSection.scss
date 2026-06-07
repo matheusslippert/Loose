@@ -1,0 +1,26 @@
+@use '../styles/variables' as *;
+
+.newsletter-section {
+  .newsletter-box {
+    background-image: url('/assets/institucional/fundo-textura.jpg');
+    padding: 4rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    input {
+      border: 1px solid $text-primary;
+      padding: 1rem;
+      flex-grow: 1;
+      font-family: $font-primary;
+    }
+
+    button {
+      background-color: $brand-coral;
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      cursor: pointer;
+    }
+  }
+}

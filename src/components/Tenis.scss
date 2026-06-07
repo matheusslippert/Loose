@@ -1,0 +1,148 @@
+@use '../styles/variables' as *;
+
+.tenis-section {
+  background-color: #E6D9E8; 
+  background-image: url('/assets/institucional/fundo-roxo.png');
+  background-size: cover;
+  background-position: center;
+  
+  /* AJUSTE 1: Aumentamos a margem da direita (8rem) e diminuímos a da esquerda (3rem) */
+  padding: 2rem 6rem 5rem 4rem; 
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .container {
+    /* AJUSTE 2: Precisamos do position relative aqui para o selo ficar absoluto a ele */
+    position: relative; 
+    width: 100%;
+    max-width: 1250px; 
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  .header-tenis {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    
+    margin-bottom: 0.2rem; 
+
+    .title-tenis {
+      font-family: $font-primary;
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: $brand-purple;
+      letter-spacing: -0.04em;
+    }
+
+    /* AJUSTE 3: O selo agora é absoluto, permitindo jogar ele mais pro canto e mais pra cima */
+    .selo-img {
+      position: absolute;
+      top: -1rem; /* Puxa mais para cima */
+      right: -5rem; /* Puxa mais para o canto direito */
+      width: 120px;
+    }
+  }
+
+  .image-wrapper {
+    position: relative;
+    width: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+
+    .bg-tenis {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+    }
+
+    .text-small {
+      position: absolute;
+      top: 40%; 
+      left: 4rem; 
+      color: #ffffff;
+      font-family: $font-primary;
+      font-size: 1.1rem;
+    }
+
+    .text-bold {
+      position: absolute;
+      bottom: 1.5rem; 
+      left: 1.5rem; 
+      color: #ffffff;
+      font-family: $font-primary;
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    .smiley-icon {
+      position: absolute;
+      top: 30%;
+      right: 20%;
+      width: 50px;
+    }
+  }
+
+  .footer-tenis {
+    text-align: center;
+    margin-top: 1rem; 
+
+    .subtitle-purple {
+      font-family: $font-primary;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: $brand-purple;
+      letter-spacing: -0.04em;
+      margin-bottom: 0.2rem;
+    }
+
+    p {
+      font-family: $font-primary;
+      font-size: 1.1rem;
+      color: $text-primary;
+      margin-bottom: 0.8rem; 
+    }
+
+    .btn-coral {
+      background-color: $brand-coral;
+      color: $surface-bg;
+      border: none;
+      padding: 0.8rem 2.5rem;
+      border-radius: 40px;
+      font-family: $font-secondary;
+      font-style: italic;
+      font-weight: bold; 
+      font-size: 1.3rem;
+      cursor: pointer;
+      transition: filter 0.2s;
+
+      &:hover {
+        filter: brightness(0.9);
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .tenis-section {
+    padding: 3rem 2rem;
+    
+    .header-tenis {
+      .selo-img {
+        right: 0; /* No mobile volta a ficar alinhado para não quebrar a tela */
+      }
+    }
+
+    .image-wrapper {
+      .text-small { left: 2rem; top: 40%; }
+      .text-bold { left: 1rem; bottom: 1rem; font-size: 1.5rem; }
+    }
+  }
+}
