@@ -1,73 +1,71 @@
-# React + TypeScript + Vite
+# Loose. - E-commerce Streetwear
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto foi desenvolvido como parte de um **Teste Prático para Estágio em Desenvolvimento**. O objetivo foi realizar a transição fiel de um protótipo de alta fidelidade no Figma para uma aplicação web funcional, utilizando tecnologias modernas e seguindo boas práticas de organização de código.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠️ Tecnologias Utilizadas
 
-## React Compiler
+Para garantir um código escalável, manutenível e performático, foram utilizadas as seguintes ferramentas:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **Linguagem:** TypeScript
+* **Framework:** React JS
+* **Estilização:** Sass (SCSS) com arquitetura modular
+* **Ferramenta de Build:** Vite
+* **Controle de Versão:** Git e GitHub
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Como rodar o projeto
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Para executar o projeto localmente em sua máquina, siga os passos abaixo:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+1. **Clone o repositório:**
+```bash
+git clone https://github.com/seu-usuario/loose-ecommerce.git
+cd loose-ecommerce
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+2. **Instale as dependências:**
+```bash
+npm install
+npm install -D sass
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+
+
+3. **Inicie o servidor de desenvolvimento:**
+```bash
+npm run dev
+
+```
+
+
+4. **Acesse o projeto:**
+O terminal fornecerá um link local (geralmente `http://localhost:5173`). Segure `Cmd` (ou `Ctrl`) e clique no link para abrir no seu navegador.
+
+---
+
+## 📝 Conceitos Teóricos
+
+Para o desenvolvimento deste projeto, foram aplicados os seguintes conceitos fundamentais de e-commerce:
+
+* **Árvore de Categorias:** É a estrutura usada para organizar os produtos de uma loja virtual. Ela funciona como uma hierarquia, separando os itens em categorias e subcategorias para facilitar a navegação e a busca dos clientes.
+* **Produto:** É o item que está sendo vendido na loja. Ele reúne informações gerais como nome, descrição, marca e categoria, servindo como base para suas variações.
+* **SKU (Stock Keeping Unit):** É uma variação específica de um produto. Cada tamanho, cor ou modelo diferente possui seu próprio SKU, permitindo controlar estoque, preço e identificação de cada versão do produto.
+
+---
+
+## 💻 Funcionalidades Implementadas
+
+* **Interface Fiel:** Desenvolvimento responsivo baseado no design system do Figma.
+* **Minicart:** Sistema funcional de adição de itens, cálculo de quantidade e exibição do valor total em tempo real.
+* **Newsletter:** Campo de e-mail com validação e feedback visual de sucesso.
+
+---
+
+## 🤝 Autor
+
+Desenvolvido por **Matheus Lippert**.
