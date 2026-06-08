@@ -1,4 +1,3 @@
-// src/types/product.ts
 export interface SKU {
   id: string;
   size: string;
