@@ -7,6 +7,8 @@ import { Video } from './components/Video';
 import { Tenis } from './components/Tenis';
 import { BannerDuplo } from './components/BannerDuplo';
 import { ShopAndNewsletter } from './components/ShopAndNewsletter';
+import { Sobre } from './components/Sobre';
+import { Footer } from './components/Footer';
 
 
 
@@ -23,7 +25,8 @@ export default function App() {
         <Tenis />
         <BannerDuplo />
         <ShopAndNewsletter />
-        {/* As próximas seções entrarão aqui */}
+        <Sobre />
+        <Footer />  
       </main>
     </>
   );
