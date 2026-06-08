@@ -1,31 +1,31 @@
 @use '../styles/variables' as *;
 
 .colecoes {
-  background-color: $surface-bg; 
-padding: 6rem 2rem 5rem 4rem;
+  background-color: $surface-bg;
+  padding: 6rem 2rem 5rem 4rem;
   display: flex;
-  justify-content: center; 
-  position: relative; 
+  justify-content: center;
+  position: relative;
 
   .decor-purple-loop {
     position: absolute;
-    left: -25px; 
-    top: 8%; 
-    width: 280px; 
+    left: -25px;
+    top: 8%;
+    width: 280px;
     z-index: 1;
   }
 
   .smiley-icon {
     position: absolute;
     right: 0rem;
-    bottom: -10px; 
-    width: 100px; 
+    bottom: -5px;
+    width: 100px;
     z-index: 10;
   }
 
   .container {
     width: 100%;
-    max-width: 1250px; 
+    max-width: 1250px;
     position: relative;
     z-index: 2;
   }
@@ -36,13 +36,13 @@ padding: 6rem 2rem 5rem 4rem;
     font-weight: 700;
     color: $brand-purple;
     letter-spacing: -0.04em;
-    margin-bottom: 0.5rem; 
+    margin-bottom: 0.5rem;
   }
 
   .grid {
     display: grid;
-    grid-template-columns: 1.35fr 1fr 1fr 1fr; 
-    grid-auto-rows: 380px; 
+    grid-template-columns: 1.35fr 1fr 1fr 1fr;
+    grid-auto-rows: 380px;
     gap: 1.5rem;
   }
 
@@ -52,14 +52,14 @@ padding: 6rem 2rem 5rem 4rem;
     overflow: hidden;
     display: block;
     cursor: pointer;
-    height: 100%; 
+    height: 100%;
 
     .card-image {
       width: 100%;
       height: 100%;
-      object-fit: cover; 
-      object-position: top center; 
-      transition: transform 0.4s ease; 
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.4s ease;
     }
 
     .overlay {
@@ -82,51 +82,58 @@ padding: 6rem 2rem 5rem 4rem;
 
     &:hover {
       .card-image {
-        transform: scale(1.06); 
+        transform: scale(1.06);
       }
     }
   }
 }
+
 
 @media (max-width: 1024px) {
   .colecoes {
     padding: 4rem 2rem;
     justify-content: center;
 
-    .container { 
-      padding-left: 0; 
-      width: 100%; 
-      max-width: 100%; 
+    .container {
+      padding-left: 0;
+      width: 100%;
+      max-width: 100%;
     }
-    
-    .decor-purple-loop { 
-      display: none; 
+
+    .decor-purple-loop {
+      display: none;
+    }
+
+    .smiley-icon {
+      width: 70px;
+      right: 1rem;
+      bottom: 0;
     }
 
     .grid {
-      grid-template-columns: repeat(2, 1fr); 
-      grid-auto-rows: 350px; 
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: 350px;
     }
   }
 }
 
+/* Celular (768px) */
 @media (max-width: 768px) {
   .colecoes {
-    padding: 3rem 1.5rem;
-    
-    .smiley-icon { 
-      width: 50px; 
-      right: 1rem; 
-      bottom: 1rem; 
+
+    .smiley-icon {
+      width: 70px;
+      right: 1rem;
+      bottom: 0rem;
+    }
+
+    .title {
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
     }
 
     .grid {
       grid-template-columns: 1fr;
-      grid-auto-rows: 420px; 
-    }
-    
-    .title { 
-      font-size: 2rem; 
     }
   }
 }

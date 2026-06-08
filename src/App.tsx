@@ -10,9 +10,6 @@ import { ShopAndNewsletter } from './components/ShopAndNewsletter';
 import { Sobre } from './components/Sobre';
 import { Footer } from './components/Footer';
 
-
-
-
 export default function App() {
   return (
     <>

@@ -3,18 +3,14 @@ import './Manifesto.scss';
 export function Manifesto() {
   return (
     <section className="manifesto">
-      {/* Imagens Flutuantes (Decoração) */}
-      <img src="/assets/institucional/rabisco-esquerdo.png" alt="" className="decor decor-left" />
-      <img src="/assets/institucional/rabisco-direito.png" alt="" className="decor decor-right" />
-      <img src="/assets/institucional/mascote-vinil.png" alt="" className="mascot mascot-vinyl" />
-      <img src="/assets/institucional/mascote-skate.png" alt="" className="mascot mascot-skate" />
+      <img src="/assets/icons/rabisco-esquerdo.png" alt="Rabisco roxo lado esquerdo" className="decor decor-left" />
+      <img src="/assets/icons/rabisco-direito.png" alt="Rabisco roxo lado direito" className="decor decor-right" />
+      <img src="/assets/icons/mascote-vinil.png" alt="Mascote com Vinil" className="mascot mascot-vinyl" />
+      <img src="/assets/icons/mascote-skate.png" alt="Mascote de Skate" className="mascot mascot-skate" />
       
-      {/* Removemos os sóis laranjas daqui, eles agora ficam perto do texto */}
-
       <div className="manifesto-content">
-        {/* Envelope para o solzinho acompanhar o título principal */}
         <div className="title-wrapper">
-          <img src="/assets/institucional/sol.png" alt="" className="decor-sun sun-top" />
+          <img src="/assets/icons/sol.png" alt="sol" className="decor-sun sun-top" />
           <h2 className="title-serif">a gente não é roupa.</h2>
         </div>
         
@@ -23,8 +19,7 @@ export function Manifesto() {
           que você precisa pra sair de casa.
         </p>
 
-        {/* Linha Divisória */}
-        <img src="/assets/institucional/linha-preta.png" alt="" className="divider-line" />
+        <img src="/assets/linhas/linha-preta.png" alt="Linha preta" className="divider-line" />
 
         <p className="paragraph-medium">
           porque rua não é cenário, é território.<br />
@@ -37,15 +32,13 @@ export function Manifesto() {
           despercebido.
         </h3>
 
-        {/* Linha Divisória */}
-        <img src="/assets/institucional/linha-preta.png" alt="" className="divider-line" />
+        <img src="/assets/linhas/linha-preta.png" alt="Linha preta" className="divider-line" />
 
-        {/* Envelope para o solzinho acompanhar o último título */}
         <div className="title-wrapper highlight-wrapper">
           <h3 className="subtitle-serif highlight">
             a Loose veste quem chegou.
           </h3>
-          <img src="/assets/institucional/sol.png" alt="" className="decor-sun sun-bottom" />
+          <img src="/assets/icons/sol.png" alt="" className="decor-sun sun-bottom" />
         </div>
 
         <button className="manifesto-btn">wear it loose. live it loud.</button>

@@ -6,14 +6,14 @@ export function Tenis() {
       <div className="container">
         <div className="header-tenis">
           <h2 className="title-tenis">tênis.</h2>
-          <img src="/assets/institucional/selo-loose.png" alt="Selo Loose" className="selo-img" />
+          <img src="/assets/icons/selo-loose.png" alt="Selo Loose" className="selo-img" />
         </div>
 
         <div className="image-wrapper">
-          <img src="/assets/institucional/fundo-tenis.png" alt="Tênis Loose" className="bg-tenis" />
+          <img src="/assets/fundos/bg-tenis.png" alt="Tênis Loose" className="bg-tenis" />
           <span className="text-small">“é o tênis que você usa</span>
           <span className="text-bold">pra<br />apresentação de<br />TCC.”</span>
-          <img src="/assets/institucional/smiley.png" alt="Sorriso" className="smiley-icon" />
+          <img src="/assets/icons/smiley.png" alt="Sorriso" className="smiley-icon" />
         </div>
 
         <div className="footer-tenis">

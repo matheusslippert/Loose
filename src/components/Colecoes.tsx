@@ -10,9 +10,8 @@ export function Colecoes() {
 
   return (
     <section className="colecoes">
-      {/* Novas imagens decorativas que faltavam! */}
-      <img src="/assets/institucional/rabisco-roxo.png" alt="" className="decor-purple-loop" />
-      <img src="/assets/institucional/smiley.png" alt="" className="smiley-icon" />
+      <img src="/assets/icons/rabisco-lateral.png" alt="Rabisco roxo lateral" className="decor-purple-loop" />
+      <img src="/assets/icons/smiley.png" alt="Smiley icon" className="smiley-icon" />
 
       <div className="container">
         <h2 className="title">coleções.</h2>

@@ -11,9 +11,8 @@
     width: 100%;
     max-width: 1250px;
     display: flex;
-        justify-content: flex-start; 
-
-    gap: 1rem; 
+    justify-content: flex-start;
+    gap: 1rem;
   }
 
   .sobre-content {
@@ -22,8 +21,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-width: 100%;
-max-width: 500px;
+    width: 100%;
+    max-width: 500px;
 
     h1 {
       font-family: $font-primary;
@@ -40,14 +39,13 @@ max-width: 500px;
       color: $text-primary;
       line-height: 1.4;
       max-width: 450px;
-      /* AJUSTE: Reduzido de 3rem para 1.5rem para aproximar o conteúdo de baixo */
-      margin-bottom: 3rem; 
+      margin-bottom: 3rem;
 
       p {
-        /* AJUSTE: Reduzido de 1rem para 0.5rem para os parágrafos ficarem mais juntos */
-        margin-bottom: 0rem; 
+        margin-bottom: 0rem;
       }
     }
+
     .card-info {
       position: relative;
       padding-left: 1.5rem;
@@ -80,8 +78,7 @@ max-width: 500px;
         color: $text-primary;
         letter-spacing: -0.02em;
         margin-bottom: 0.5rem;
-                white-space: nowrap; 
-
+        white-space: nowrap;
       }
 
       p {
@@ -114,34 +111,94 @@ max-width: 500px;
     border-radius: 4px;
     overflow: hidden;
 
-    
-
     img {
       width: 90%;
       height: 85%;
       object-fit: contain;
       display: block;
-            object-position: left; 
-
-            margin-left: 0rem;
-                  margin-top: 4rem; /* Aumente para 3rem ou 4rem se quiser que ela desça mais ainda */
-
-
+      object-position: left;
+      margin-left: 0rem;
+      margin-top: 4rem;
     }
   }
 }
 
 @media (max-width: 1024px) {
   .sobre-section {
+    padding: 4rem 2rem;
+
     .sobre-container {
       flex-direction: column;
+      align-items: center;
       gap: 3rem;
     }
-    .sobre-content .mascote-sobre {
-      position: relative;
-      right: auto;
-      bottom: auto;
-      margin-top: 1rem;
+
+    .sobre-content {
+      max-width: 700px;
+
+      .mascote-sobre {
+        right: 20rem;
+        bottom: 10rem;
+        width: 90px;
+
+      }
+    }
+
+    .sobre-photo {
+      margin-top: -3rem;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      img {
+        width: 100%;
+        height: auto;
+        object-position: center;
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .sobre-section {
+    padding: 3rem 1.5rem;
+
+    .sobre-content {
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .sobre-text {
+        font-size: 1rem;
+        margin-bottom: 2.5rem;
+      }
+
+      .card-info {
+        h2 {
+          font-size: 1.6rem;
+          white-space: normal;
+        }
+      }
+
+      .mascote-sobre {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        margin-top: -3rem;
+        width: 120px;
+        align-self: center;
+      }
+    }
+
+    .sobre-photo {
+      margin-top: -8rem;
+
+      img {
+        width: 100%;
+      }
     }
   }
 }

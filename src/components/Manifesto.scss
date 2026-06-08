@@ -2,25 +2,43 @@
 
 .manifesto {
   background-color: $brand-yellow;
-  /* AJUSTE 1: Topo reduzido quase a zero para o título colar lá em cima */
   padding: 1.5rem 2rem 0 2rem;
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* AJUSTE 2: Garante que o bloco suba e não fique no meio da tela */
+  align-items: flex-start;
   text-align: center;
   color: $text-primary;
 
-  .decor, .mascot {
+  .decor,
+  .mascot {
     position: absolute;
     z-index: 1;
   }
 
-  .decor-left { top: -13px; left: 0px; width: 430px; }
-  .decor-right { top: -20px; right: 0px; width: 410px; }
+  .decor-left {
+    top: -13px;
+    left: 0px;
+    width: 430px;
+  }
 
-  .mascot-vinyl { bottom: -180px; left: 15%; width: 300px; } 
-  .mascot-skate { bottom: -160px; right: 2%; width: 240px; } 
+  .decor-right {
+    top: -20px;
+    right: 0px;
+    width: 410px;
+  }
+
+  .mascot-vinyl {
+    bottom: -180px;
+    left: 15%;
+    width: 300px;
+  }
+
+  .mascot-skate {
+    bottom: -160px;
+    right: 2%;
+    width: 240px;
+  }
 
   .manifesto-content {
     position: relative;
@@ -30,19 +48,38 @@
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
-    margin-bottom: 0; 
+    margin-bottom: 0;
   }
 
-  .title-wrapper { position: relative; display: inline-block; }
-  .decor-sun { position: absolute; z-index: -1; }
-  .sun-top { top: -10px; left: -40px; width: 45px; }
-  .sun-bottom { bottom: 0px; right: -50px; width: 60px; }
+  .title-wrapper {
+    position: relative;
+    display: inline-block;
+  }
 
-  /* --- Linhas Divisórias --- */
+  .decor-sun {
+    position: absolute;
+    z-index: -1;
+  }
+
+  .sun-top {
+    top: -10px;
+    left: -40px;
+    width: 45px;
+  }
+
+  .sun-bottom {
+    bottom: 0px;
+    right: -50px;
+    width: 60px;
+  }
+
   .divider-line {
-    width: 140px; 
-    margin: 0.8rem 0; 
+    width: 140px;
+    margin: 0.8rem 0;
     opacity: 0.9;
+    height: auto;
+    object-fit: contain;
+    flex-shrink: 0;
   }
 
   .title-serif {
@@ -54,21 +91,21 @@
     letter-spacing: -0.02em;
   }
 
-  /* AJUSTE 3: Fontes dos Parágrafos agora 100% corretas e menores */
-  .paragraph-small, .paragraph-medium {
-    font-family: $font-primary; /* Força a fonte primária do projeto */
+  .paragraph-small,
+  .paragraph-medium {
+    font-family: $font-primary;
     font-style: normal;
     font-weight: 400;
   }
 
   .paragraph-small {
-    font-size: 1rem; /* Fonte reduzida */
+    font-size: 1rem;
     line-height: 1.4;
     color: $brand-purple;
   }
 
   .paragraph-medium {
-    font-size: 1rem; /* Fonte reduzida */
+    font-size: 1rem;
     line-height: 1.6;
     color: $text-primary;
   }
@@ -76,8 +113,7 @@
   .subtitle-serif {
     font-family: $font-secondary;
     font-style: italic;
-    /* AJUSTE 4: "a Loose veste quem chegou" num tamanho mais harmônico */
-    font-size: 1.8rem; 
+    font-size: 1.8rem;
     font-weight: 400;
     line-height: 1;
     margin-top: 0.2rem;
@@ -88,26 +124,22 @@
     }
   }
 
-  /* AJUSTE 5: Botão reduzido pela metade */
   .manifesto-btn {
-    background-color: $brand-coral;
+    background-color: #FF6B6B;
     color: $surface-bg;
     border: none;
-    /* Prenchimento muito menor */
-    padding: 0.5rem 1.5rem; 
+    padding: 0.5rem 1.5rem;
     border-radius: 40px;
     transition: filter 0.2s ease, transform 0.2s ease;
 
     font-family: $font-secondary;
     font-style: italic;
     font-weight: 400;
-    /* Letra menor */
-    font-size: 1.1rem; 
+    font-size: 1.1rem;
     letter-spacing: 0.02em;
 
-    /* A matemática refeita para o botão menor cortar a tela */
-    margin-top: 1.5rem; 
-    margin-bottom: -85px; 
+    margin-top: 1.5rem;
+    margin-bottom: -85px;
 
     &:hover {
       filter: brightness(0.9);
@@ -116,12 +148,94 @@
   }
 }
 
-/* --- Responsividade --- */
+
 @media (max-width: 1024px) {
   .manifesto {
     padding: 2rem 1.5rem 0 1.5rem;
-    
-    .decor, .mascot { display: none; }
-    .manifesto-btn { margin-bottom: -40px; } 
+
+    .decor-left {
+      width: 250px;
+    }
+
+    .decor-right {
+      width: 250px;
+    }
+
+    .mascot-vinyl {
+      width: 200px;
+      bottom: -120px;
+      left: 5%;
+    }
+
+    .mascot-skate {
+      width: 160px;
+      bottom: -100px;
+      right: 2%;
+    }
+
+    .manifesto-btn {
+      margin-bottom: -50px;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .manifesto {
+    padding: 2rem 1rem 0 1rem;
+
+    .decor-left,
+    .decor-right {
+      display: none;
+    }
+
+    .mascot-vinyl {
+      width: 120px;
+      bottom: -80px;
+      left: 0%;
+    }
+
+    .mascot-skate {
+      width: 110px;
+      bottom: -60px;
+      right: 0%;
+    }
+
+    .manifesto-content {
+      .title-serif {
+        font-size: 1.8rem;
+      }
+
+      .subtitle-serif {
+        font-size: 1.4rem;
+      }
+
+      .paragraph-small,
+      .paragraph-medium {
+        font-size: 0.9rem;
+      }
+
+      .sun-top {
+        width: 35px;
+        left: -20px;
+        top: -15px;
+      }
+
+      .sun-bottom {
+        width: 45px;
+        right: -20px;
+        bottom: -10px;
+      }
+    }
+
+    .divider-line {
+      width: 120px;
+      height: auto;
+    }
+
+    .manifesto-btn {
+      margin-bottom: -40px;
+      font-size: 1rem;
+      padding: 0.5rem 1.2rem;
+    }
   }
 }

@@ -18,6 +18,7 @@
 
   a {
     transition: color 0.2s;
+    text-decoration: none;
     &:hover { color: $text-primary; }
   }
 
@@ -35,7 +36,7 @@
   border-bottom: 1px solid $surface-card;
 
   .logo-img {
-    height: 32px; /* Ajuste a altura conforme o tamanho da sua logo */
+    height: 32px; 
     width: auto;
   }
 
@@ -47,9 +48,10 @@
       background-color: $brand-yellow;
       color: $text-primary;
       padding: 0.4rem 1.2rem;
-      border-radius: 20px; /* Arredondamento do Figma */
+      border-radius: 20px; 
       font-size: 0.85rem;
       font-weight: 700;
+      text-decoration: none;
       transition: filter 0.2s ease;
 
       &:hover { filter: brightness(0.95); }
@@ -89,6 +91,7 @@
       align-items: center;
       justify-content: center;
       position: relative;
+      cursor: pointer;
     }
 
     .icon {
@@ -96,9 +99,73 @@
       height: 24px;
     }
   }
+
+  /* Oculta o botão de menu no desktop por padrão */
+  .menu-mobile-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    
+    img {
+      width: 28px;
+      height: 28px;
+    }
+  }
 }
 
+/* --- RESPONSIVIDADE --- */
+
+/* Tablet e Telas Médias (1024px) */
+@media (max-width: 1024px) {
+  .top-bar {
+    padding: 0.5rem 2rem;
+  }
+
+  .header {
+    padding: 1rem 2rem;
+
+    .nav-links {
+      gap: 0.2rem; /* Junta mais os botões */
+      
+      a {
+        padding: 0.4rem 0.8rem; /* Reduz o tamanho dos botões amarelos */
+        font-size: 0.8rem;
+      }
+    }
+
+    .actions {
+      gap: 1rem; /* Aproxima os ícones */
+      
+      .search-box input {
+        width: 90px; /* Encolhe a barra de pesquisa para caber na tela */
+      }
+    }
+  }
+}
+
+/* Celular (768px) */
 @media (max-width: 768px) {
-  .nav-links, .search-box, .top-bar { display: none !important; }
-  .header { padding: 1rem; }
+  .top-bar { 
+    display: none !important; 
+  }
+  
+  .header { 
+    padding: 1rem 1.5rem; 
+
+    /* Esconde os itens grandes que quebram a tela */
+    .nav-links, .search-box { 
+      display: none !important; 
+    }
+
+    /* Mostra o ícone de menu hambúrguer para o usuário poder navegar */
+    .menu-mobile-btn {
+      display: flex;
+    }
+
+    .actions {
+      gap: 1rem;
+    }
+  }
 }

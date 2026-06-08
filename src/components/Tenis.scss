@@ -1,23 +1,21 @@
 @use '../styles/variables' as *;
 
 .tenis-section {
-  background-color: #E6D9E8; 
-  background-image: url('/assets/institucional/fundo-roxo.png');
+  background-color: #E6D9E8;
+  background-image: url('/assets/fundos/bg-roxo.png');
   background-size: cover;
   background-position: center;
-  
-  /* AJUSTE 1: Aumentamos a margem da direita (8rem) e diminuímos a da esquerda (3rem) */
-  padding: 2rem 6rem 5rem 4rem; 
-  
+
+  padding: 2rem 6rem 5rem 4rem;
+
   display: flex;
   justify-content: center;
   align-items: center;
 
   .container {
-    /* AJUSTE 2: Precisamos do position relative aqui para o selo ficar absoluto a ele */
-    position: relative; 
+    position: relative;
     width: 100%;
-    max-width: 1250px; 
+    max-width: 1250px;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
@@ -27,8 +25,8 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    
-    margin-bottom: 0.2rem; 
+
+    margin-bottom: 0.2rem;
 
     .title-tenis {
       font-family: $font-primary;
@@ -38,11 +36,10 @@
       letter-spacing: -0.04em;
     }
 
-    /* AJUSTE 3: O selo agora é absoluto, permitindo jogar ele mais pro canto e mais pra cima */
     .selo-img {
       position: absolute;
-      top: -1rem; /* Puxa mais para cima */
-      right: -5rem; /* Puxa mais para o canto direito */
+      top: -1rem;
+      right: -5rem;
       width: 120px;
     }
   }
@@ -63,8 +60,8 @@
 
     .text-small {
       position: absolute;
-      top: 40%; 
-      left: 4rem; 
+      top: 40%;
+      left: 4rem;
       color: #ffffff;
       font-family: $font-primary;
       font-size: 1.1rem;
@@ -72,8 +69,8 @@
 
     .text-bold {
       position: absolute;
-      bottom: 1.5rem; 
-      left: 1.5rem; 
+      bottom: 1.5rem;
+      left: 1.5rem;
       color: #ffffff;
       font-family: $font-primary;
       font-size: 2rem;
@@ -92,7 +89,7 @@
 
   .footer-tenis {
     text-align: center;
-    margin-top: 1rem; 
+    margin-top: 1rem;
 
     .subtitle-purple {
       font-family: $font-primary;
@@ -107,18 +104,18 @@
       font-family: $font-primary;
       font-size: 1.1rem;
       color: $text-primary;
-      margin-bottom: 0.8rem; 
+      margin-bottom: 0.8rem;
     }
 
     .btn-coral {
-      background-color: $brand-coral;
+      background-color: #FF6B6B;
       color: $surface-bg;
       border: none;
       padding: 0.8rem 2.5rem;
       border-radius: 40px;
-      font-family: $font-secondary;
+      font-family: $font-primary;
       font-style: italic;
-      font-weight: bold; 
+      font-weight: bold;
       font-size: 1.3rem;
       cursor: pointer;
       transition: filter 0.2s;
@@ -130,19 +127,85 @@
   }
 }
 
+
 @media (max-width: 1024px) {
   .tenis-section {
     padding: 3rem 2rem;
-    
+
     .header-tenis {
       .selo-img {
-        right: 0; /* No mobile volta a ficar alinhado para não quebrar a tela */
+        right: 0;
       }
     }
 
     .image-wrapper {
-      .text-small { left: 2rem; top: 40%; }
-      .text-bold { left: 1rem; bottom: 1rem; font-size: 1.5rem; }
+      .text-small {
+        left: 2rem;
+        top: 40%;
+      }
+
+      .text-bold {
+        left: 1rem;
+        bottom: 1rem;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .tenis-section {
+    padding: 3rem 1.5rem;
+
+    .header-tenis {
+      align-items: flex-start;
+      margin-bottom: 0rem;
+
+      .title-tenis {
+        font-size: 2rem;
+        max-width: 70%;
+      }
+
+      .selo-img {
+        width: 70px;
+        top: -1.5rem;
+        right: 0;
+      }
+    }
+
+    .image-wrapper {
+      .smiley-icon {
+        display: none;
+      }
+
+      .text-small {
+        font-size: 0.85rem;
+        left: 1rem;
+        top: 1.5rem;
+      }
+
+      .text-bold {
+        font-size: 1rem;
+        left: 1rem;
+        bottom: 1rem;
+      }
+    }
+
+    .footer-tenis {
+      margin-top: 0rem;
+
+      .subtitle-purple {
+        font-size: 1.1rem;
+      }
+
+      p {
+        font-size: 0.75rem;
+      }
+
+      .btn-coral {
+        font-size: 0.8rem;
+        padding: 0.7rem 1.8rem;
+      }
     }
   }
 }

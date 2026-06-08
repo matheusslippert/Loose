@@ -5,7 +5,6 @@
   width: 100%;
   min-height: 80vh;
 
-  /* --- METADE AMARELA --- */
   .yellow-side {
     width: 50%;
     background-color: $brand-yellow;
@@ -13,47 +12,43 @@
     padding: 6rem 4rem;
     display: flex;
     align-items: center;
-    overflow: hidden; /* Corta o que sobrar do rabisco */
-
+    overflow: hidden;
 
     .rabisco-bg {
       position: absolute;
-      top: 0%;
-      left: 0%;
-      width: 90%;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
+      object-position: center;
       z-index: 1;
-      /* Seu código mantido: */
-     // filter: grayscale(100%) brightness(0.3) sepia(1) hue-rotate(-50deg) saturate(3) opacity(0.15);
     }
 
     .content {
       position: relative;
-      z-index: 2; /* Fica acima do rabisco */
+      z-index: 2;
+      margin-top: 2.6rem;
 
-      margin-top: 2.6rem; 
       .linha {
         display: block;
         height: auto;
       }
 
       .linha-top {
-        width: 160%; 
-        max-width: none; 
-        height: 2px; 
+        width: 160%;
+        max-width: none;
+        height: 2px;
         object-fit: cover;
         object-position: left;
-        /* AJUSTE: Reduzido de 1.5rem para 0.5rem para colar mais no texto */
-        margin-bottom: 1.7rem; /* Tente 3rem, 4rem ou até 5rem até ficar perfeito! */
+        margin-bottom: 1.7rem;
       }
-      
 
       .linha-bottom {
-        width: 60%; 
+        width: 60%;
         max-width: 250px;
-        /* AJUSTE: Reduzido de 1rem para 0.5rem para colar mais no texto */
         margin-top: 0rem;
-        margin-bottom: 0rem; 
+        margin-bottom: 0rem;
       }
 
       h2 {
@@ -62,20 +57,19 @@
         color: $text-primary;
         line-height: 1;
         letter-spacing: -0.04em;
-        margin: 0; /* Margens removidas para as linhas controlarem o espaço */
+        margin: 0;
 
-        /* NOVAS REGRAS: Controle do Negrito */
         .bold-text {
           font-weight: 700;
         }
 
         .light-text {
-          font-weight: 400; /* Tira o negrito */
+          font-weight: 400;
         }
       }
 
       .btn-saber-mais {
-        background-color: $brand-coral;
+        background-color: #FF6B6B;
         color: $surface-bg;
         border: none;
         padding: 0.8rem 2.5rem;
@@ -84,8 +78,7 @@
         font-size: 1.3rem;
         cursor: pointer;
         transition: filter 0.2s;
-                margin-left: 2rem; 
-
+        margin-left: 2rem;
 
         &:hover {
           filter: brightness(0.9);
@@ -94,11 +87,10 @@
     }
   }
 
-  /* --- METADE DA FOTO --- */
   .photo-side {
     width: 50%;
     position: relative;
-    background-image: url('/assets/institucional/modelo.png');
+    background-image: url('/assets/fundos/bg-modelo.png');
     background-size: cover;
     background-position: center;
     padding: 6rem 4rem;
@@ -109,9 +101,8 @@
     .text-purple {
       font-family: $font-primary;
       font-style: italic;
-      /* AJUSTE: Tamanho reduzido drasticamente (antes era 3.5rem) */
-      font-size: 2.3rem; 
-      color: $brand-purple;
+      font-size: 2.3rem;
+      color: #5B2A86;
       bottom: -0rem;
       position: relative;
       line-height: 1.1;
@@ -123,19 +114,17 @@
       position: absolute;
       right: -1.8rem;
       bottom: 4rem;
-      /* Faz o texto ficar deitado de baixo para cima */
       writing-mode: vertical-rl;
-      transform: rotate(180deg); 
+      transform: rotate(180deg);
       font-family: $font-primary;
       font-size: 4.7rem;
       font-weight: 700;
-      color: rgba(191, 113, 212, 0.1); /* Marca d'água bem suave */
+      color: rgba(191, 113, 212, 0.1);
       letter-spacing: 0.05em;
       z-index: 1;
     }
   }
 
-  /* --- ELEMENTOS FLUTUANTES GERAIS --- */
   .selo {
     position: absolute;
     top: 1rem;
@@ -149,16 +138,15 @@
     z-index: 3;
   }
 
-  /* Posições Exatas dos Skatistas */
   .skatista-branco {
-    top: 1.7rem;
+    top: 3.6rem;
     right: 55%;
     width: 110px;
   }
 
   .skatista-barbudo {
-    bottom: 1rem;
-    right: 0%;
+    bottom: 4rem;
+    right: 10%;
     width: 300px;
   }
 
@@ -169,19 +157,78 @@
   }
 }
 
-/* --- RESPONSIVIDADE (Telas Menores) --- */
 @media (max-width: 1024px) {
   .banner-duplo {
-    flex-direction: column; /* Empilha as telas no celular */
+    flex-direction: column;
 
-    .yellow-side, .photo-side {
+    .yellow-side,
+    .photo-side {
       width: 100%;
       min-height: 60vh;
       padding: 4rem 2rem;
+
+      .text-purple {
+        left: 0;
+        font-size: 3rem;
+      }
     }
-    
+
     .yellow-side .content h2 {
       font-size: 4rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .banner-duplo {
+    .yellow-side {
+      .content {
+        h2 {
+          font-size: 2.8rem;
+        }
+
+        .btn-saber-mais {
+          margin-left: 0;
+          margin-top: 1.5rem;
+          font-size: 1rem;
+          padding: 0.6rem 1.5rem;
+        }
+      }
+    }
+
+    .photo-side {
+      .text-purple {
+        left: 0;
+        font-size: 2rem;
+      }
+
+      .vertical-text {
+        display: none;
+      }
+    }
+
+    .skatista-barbudo {
+      width: 250px;
+      right: 0px;
+    }
+
+    .skatista-branco {
+
+      width: 80px;
+      right: 60%;
+      top: 1.6rem;
+    }
+
+    .skatista-roxo {
+      bottom: 15%;
+      left: 10%;
+      width: 60px;
+    }
+
+
+
+    .selo {
+      width: 60px;
     }
   }
 }
