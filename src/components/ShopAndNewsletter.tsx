@@ -1,9 +1,12 @@
 import { useState } from 'react';
+import { useCart } from './CartContext';
 import './ShopAndNewsletter.scss';
 
 export function ShopAndNewsletter() {
   const [email, setEmail] = useState('');
   const [showNotification, setShowNotification] = useState(false);
+
+  const { addToCart, toggleCart } = useCart();
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
@@ -16,6 +19,11 @@ export function ShopAndNewsletter() {
         setShowNotification(false);
       }, 10000);
     }
+  };
+
+  const handleComprar = (produto: { id: string, name: string, price: number, image: string }) => {
+    addToCart({ ...produto, quantity: 1 });
+    toggleCart();
   };
 
   return (
@@ -34,7 +42,17 @@ export function ShopAndNewsletter() {
               <p className="colors">2 Cor</p>
               <div className="price-row">
                 <span className="price">R$80,00</span>
-                <button className="btn-comprar">comprar</button>
+                <button
+                  className="btn-comprar"
+                  onClick={() => handleComprar({
+                    id: 'sn-1',
+                    name: 'camiseta blv channel off white.',
+                    price: 80.00,
+                    image: '/assets/produtos/camisa2.png'
+                  })}
+                >
+                  comprar
+                </button>
               </div>
             </div>
           </div>
@@ -50,7 +68,17 @@ export function ShopAndNewsletter() {
               <p className="colors">1 cor</p>
               <div className="price-row">
                 <span className="price">R$99,00</span>
-                <button className="btn-comprar">comprar</button>
+                <button
+                  className="btn-comprar"
+                  onClick={() => handleComprar({
+                    id: 'sn-2',
+                    name: 'camiseta good times preta.',
+                    price: 99.00,
+                    image: '/assets/produtos/camisa3.3.png'
+                  })}
+                >
+                  comprar
+                </button>
               </div>
             </div>
           </div>
@@ -66,7 +94,17 @@ export function ShopAndNewsletter() {
               <p className="colors">2 Cor</p>
               <div className="price-row">
                 <span className="price">R$80,00</span>
-                <button className="btn-comprar">comprar</button>
+                <button
+                  className="btn-comprar"
+                  onClick={() => handleComprar({
+                    id: 'sn-3',
+                    name: 'camiseta blv channel azul.',
+                    price: 80.00,
+                    image: '/assets/produtos/camisa1.png'
+                  })}
+                >
+                  comprar
+                </button>
               </div>
             </div>
           </div>

@@ -113,6 +113,7 @@
     border: none;
     cursor: pointer;
     padding: 0.5rem;
+    color: $text-primary; 
 
     svg {
       width: 28px;
@@ -199,9 +200,11 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
   .top-bar {
-    display: none !important;
+    justify-content: right; 
+    padding: 0.5rem 1rem;
+    font-size: 0.7rem; 
   }
 
   .header {
