@@ -1,4 +1,6 @@
 import './Manifesto.scss';
+import { Link } from 'react-router-dom';
+
 
 export function Manifesto() {
   return (
@@ -41,7 +43,8 @@ export function Manifesto() {
           <img src="/assets/icons/sol.png" alt="" className="decor-sun sun-bottom" />
         </div>
 
-        <button className="manifesto-btn">wear it loose. live it loud.</button>
+        <button className="manifesto-btn"><Link to="../vitrine" >
+wear it loose. live it loud.</Link></button>
       </div>
     </section>
   );

@@ -122,7 +122,9 @@
     }
   }
 }
-
+#sobre {
+  scroll-margin-top: 100px; 
+}
 @media (max-width: 1024px) {
   .sobre-section {
     padding: 4rem 2rem;

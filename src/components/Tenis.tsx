@@ -1,4 +1,6 @@
 import './Tenis.scss';
+import { Link } from 'react-router-dom';
+
 
 export function Tenis() {
   return (
@@ -19,7 +21,8 @@ export function Tenis() {
         <div className="footer-tenis">
           <h3 className="subtitle-purple">entre em contato com o que lhe faz bem.</h3>
           <p>Porque todos deveriam conhecer a sensação de ter aquele par perfeito.</p>
-          <button className="btn-coral">encontre seu tênis</button>
+          <button className="btn-coral"><Link to="../vitrine?categoria=Skate" >
+encontre seu tênis</Link></button>
         </div>
       </div>
     </section>

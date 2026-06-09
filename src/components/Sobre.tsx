@@ -2,7 +2,7 @@ import './Sobre.scss';
 
 export function Sobre() {
   return (
-    <section className="sobre-section">
+    <section id="sobre" className="sobre-section"> 
       <div className="sobre-container">
 
         <div className="sobre-content">

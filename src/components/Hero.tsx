@@ -1,4 +1,6 @@
 import './Hero.scss';
+import { Link } from 'react-router-dom';
+
 
 export function Hero() {
   return (
@@ -30,7 +32,10 @@ export function Hero() {
           paulistano e da estação da luz num sábado de tarde.</p>
         </div>
 
-        <button className="cta-button">quero.</button>
+        <button className="cta-button" >
+          <Link to="../vitrine" >
+quero.</Link>
+        </button>
       </div>
     </section>
   );

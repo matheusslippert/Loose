@@ -1,6 +1,12 @@
 import './BannerDuplo.scss';
 
 export function BannerDuplo() {
+  const rolarParaSobre = () => {
+    const secaoSobre = document.getElementById('sobre');
+    if (secaoSobre) {
+      secaoSobre.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <section className="banner-duplo">
       <div className="yellow-side">
@@ -19,8 +25,9 @@ export function BannerDuplo() {
 
           <img src="/assets/linhas/linha-preta.png" alt="Linha" className="linha linha-top" />
 
-          <button className="btn-saber-mais">saber mais.</button>
-        </div>
+          <button className="btn-saber-mais" onClick={rolarParaSobre}>
+            saber mais.
+          </button>        </div>
       </div>
 
       <div className="photo-side">

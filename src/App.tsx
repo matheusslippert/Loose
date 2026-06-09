@@ -16,7 +16,9 @@ import { CartProvider } from './components/CartContext';
 import { Vitrine } from './pages/Vitrine';
 import { ProdutoDetalhes } from './pages/ProdutoDetalhes';
 import { FavoritesProvider } from './components/FavoritesContext';
-import { MiniFavorites } from './components/MiniFavorites'; // <-- Importe no topo
+import { MiniFavorites } from './components/MiniFavorites';
+import { ScrollToTop } from './components/ScrollToTop';
+
 
 
 
@@ -37,24 +39,22 @@ function Home() {
 
 export default function App() {
   return (
-        <FavoritesProvider>
-
-    <CartProvider>
-
-      <BrowserRouter>
-        <Header />
-        <MiniCart />
-        <MiniFavorites />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/produto/:id" element={<ProdutoDetalhes />} />
-          {/* Agora todas as categorias e buscas caem nesta única rota da Vitrine! */}
-          <Route path="/vitrine" element={<Vitrine />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
-    </CartProvider>
-            </FavoritesProvider>
+    <FavoritesProvider>
+      <CartProvider>
+        <BrowserRouter>
+          <ScrollToTop />
+          <Header />
+          <MiniCart />
+          <MiniFavorites />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/produto/:id" element={<ProdutoDetalhes />} />
+            <Route path="/vitrine" element={<Vitrine />} />
+          </Routes>
+          <Footer />
+        </BrowserRouter>
+      </CartProvider>
+    </FavoritesProvider>
 
   );
 }
