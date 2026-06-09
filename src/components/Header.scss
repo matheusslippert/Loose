@@ -19,7 +19,10 @@
   a {
     transition: color 0.2s;
     text-decoration: none;
-    &:hover { color: $text-primary; }
+
+    &:hover {
+      color: $text-primary;
+    }
   }
 
   .separator {
@@ -36,7 +39,7 @@
   border-bottom: 1px solid $surface-card;
 
   .logo-img {
-    height: 32px; 
+    height: 32px;
     width: auto;
   }
 
@@ -48,13 +51,15 @@
       background-color: $brand-yellow;
       color: $text-primary;
       padding: 0.4rem 1.2rem;
-      border-radius: 20px; 
+      border-radius: 20px;
       font-size: 0.85rem;
       font-weight: 700;
       text-decoration: none;
       transition: filter 0.2s ease;
 
-      &:hover { filter: brightness(0.95); }
+      &:hover {
+        filter: brightness(0.95);
+      }
     }
   }
 
@@ -80,7 +85,9 @@
         width: 120px;
         color: $text-primary;
 
-        &::placeholder { color: #A0A0A0; }
+        &::placeholder {
+          color: #A0A0A0;
+        }
       }
     }
 
@@ -100,14 +107,13 @@
     }
   }
 
-  /* Oculta o botão de menu no desktop por padrão */
   .menu-mobile-btn {
     display: none;
     background: none;
     border: none;
     cursor: pointer;
     padding: 0.5rem;
-    
+
     svg {
       width: 28px;
       height: 28px;
@@ -115,13 +121,12 @@
   }
 }
 
-/* --- MENU MOBILE DROPDOWN --- */
 .mobile-menu-dropdown {
-  display: none; /* Escondido por padrão no desktop */
+  display: none;
   flex-direction: column;
   background-color: $surface-bg;
   border-top: 1px solid rgba(0, 0, 0, 0.05);
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   position: absolute;
   top: 100%;
   left: 0;
@@ -135,7 +140,7 @@
     font-weight: 700;
     text-decoration: none;
     font-size: 1.1rem;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 
     &:last-child {
       border-bottom: none;
@@ -148,7 +153,7 @@
 
   .search-box-mobile {
     margin-bottom: 1rem;
-    
+
     input {
       width: 100%;
       padding: 0.8rem 1rem;
@@ -166,9 +171,7 @@
   }
 }
 
-/* --- RESPONSIVIDADE --- */
 
-/* Tablet e Telas Médias (1024px) */
 @media (max-width: 1024px) {
   .top-bar {
     padding: 0.5rem 2rem;
@@ -179,7 +182,7 @@
 
     .nav-links {
       gap: 0.2rem;
-      
+
       a {
         padding: 0.4rem 0.8rem;
         font-size: 0.8rem;
@@ -188,7 +191,7 @@
 
     .actions {
       gap: 1rem;
-      
+
       .search-box input {
         width: 90px;
       }
@@ -196,21 +199,19 @@
   }
 }
 
-/* Celular (768px) */
 @media (max-width: 768px) {
-  .top-bar { 
-    display: none !important; 
+  .top-bar {
+    display: none !important;
   }
-  
-  .header { 
-    padding: 1rem 1.5rem; 
 
-    /* Esconde os itens grandes que quebram a tela */
-    .nav-links, .search-box { 
-      display: none !important; 
+  .header {
+    padding: 1rem 1.5rem;
+
+    .nav-links,
+    .search-box {
+      display: none !important;
     }
 
-    /* Mostra o ícone de menu hambúrguer para o usuário poder navegar */
     .menu-mobile-btn {
       display: flex;
     }
@@ -220,7 +221,6 @@
     }
   }
 
-  /* Mostra o dropdown apenas no mobile quando tem a classe .open */
   .mobile-menu-dropdown.open {
     display: flex;
   }

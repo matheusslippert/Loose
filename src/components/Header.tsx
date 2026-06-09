@@ -7,23 +7,21 @@ import './Header.scss';
 
 export function Header() {
   const { toggleCart, cart } = useCart();
-  const { favorites, toggleFavoritesOpen } = useFavorites(); 
+  const { favorites, toggleFavoritesOpen } = useFavorites();
 
   const navigate = useNavigate();
   const [termoBusca, setTermoBusca] = useState('');
-  
-  // NOVO: Estado para controlar se o menu mobile está aberto
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleSearch = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter' && termoBusca.trim() !== '') {
       navigate(`/vitrine?busca=${termoBusca}`);
       setTermoBusca('');
-      setIsMobileMenuOpen(false); // Fecha o menu ao buscar no mobile
+      setIsMobileMenuOpen(false);
     }
   };
 
-  // NOVO: Função para fechar o menu ao clicar em um link
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
   return (
@@ -39,7 +37,6 @@ export function Header() {
           <img src="/assets/icons/logo.png" alt="Loose" className="logo-img" />
         </Link>
 
-        {/* Menu Desktop Original */}
         <nav className="nav-links">
           <Link to="/vitrine">novidades</Link>
           <Link to="/vitrine?categoria=Masculino">masculino</Link>
@@ -68,7 +65,7 @@ export function Header() {
               </span>
             )}
           </button>
-          
+
           <button className="icon-btn" onClick={toggleCart}>
             <img src="/assets/icons/bag.png" alt="Carrinho" className="icon" />
             {cart.length > 0 && (
@@ -78,20 +75,17 @@ export function Header() {
             )}
           </button>
 
-          {/* NOVO: Evento onClick adicionado ao botão mobile */}
-          <button 
-            className="menu-mobile-btn" 
+          <button
+            className="menu-mobile-btn"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               {isMobileMenuOpen ? (
-                // Ícone de "X" quando o menu estiver aberto
                 <>
                   <line x1="18" y1="6" x2="6" y2="18"></line>
                   <line x1="6" y1="6" x2="18" y2="18"></line>
                 </>
               ) : (
-                // Ícone de Hambúrguer quando estiver fechado
                 <>
                   <line x1="3" y1="12" x2="21" y2="12"></line>
                   <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -103,7 +97,6 @@ export function Header() {
         </div>
       </div>
 
-      {/* NOVO: Estrutura do Menu Mobile Dropdown */}
       <div className={`mobile-menu-dropdown ${isMobileMenuOpen ? 'open' : ''}`}>
         <div className="search-box-mobile">
           <input
