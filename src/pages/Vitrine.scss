@@ -89,7 +89,7 @@
 
     .vitrine-header {
       margin-bottom: 2rem;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
       padding-bottom: 1rem;
 
       h1 {
@@ -98,7 +98,7 @@
         color: $text-primary;
         margin: 0 0 0.5rem 0;
       }
-      
+
       p {
         color: $text-secondary;
         font-family: $font-primary;
@@ -118,21 +118,31 @@
   .vitrine-page {
     flex-direction: column;
     padding: 2rem 1.5rem;
+    gap: 2rem;
 
     .sidebar-filtros {
       width: 100%;
-      
-      .filtro-grupo ul {
-        flex-direction: row;
-        overflow-x: auto;
-        padding-bottom: 10px;
-        white-space: nowrap;
-        
-        li button.ativo {
-          border-left: none;
-          border-bottom: 3px solid $brand-yellow;
-          padding-left: 0;
-          padding-bottom: 5px;
+
+      .filtro-grupo {
+        margin-bottom: 1.5rem;
+
+        ul {
+          flex-direction: row;
+          flex-wrap: wrap;
+          gap: 1rem;
+          padding-bottom: 0;
+
+          li button {
+            width: auto;
+            padding: 0.5rem;
+
+            &.ativo {
+              border-left: none;
+              border-bottom: 3px solid $brand-yellow;
+              padding-left: 0;
+              padding-bottom: 5px;
+            }
+          }
         }
       }
     }
@@ -140,16 +150,45 @@
     .vitrine-content {
       .produtos-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
       }
     }
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
   .vitrine-page {
+    padding: 1.5rem 1rem;
+
+    .sidebar-filtros {
+      .filtro-grupo {
+        h2 {
+          font-size: 1.2rem;
+          margin-bottom: 1rem;
+        }
+
+        .botoes-grid {
+          gap: 0.4rem;
+
+          .btn-filtro {
+            padding: 0.4rem 0.8rem;
+            font-size: 0.85rem;
+          }
+        }
+      }
+    }
+
     .vitrine-content {
+      .vitrine-header {
+        h1 {
+          font-size: 1.8rem;
+        }
+      }
+
       .produtos-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(auto, 340px);
+        justify-content: center;
+        gap: 2rem;
       }
     }
   }
